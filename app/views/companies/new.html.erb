@@ -1,0 +1,30 @@
+<% provide(:title, 'New Company') %>
+<h1>Add New Company Details</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@company) do |f| %>
+        <%= render 'shared/er_msg' %>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+
+        <%= f.label :material %>
+        <%= f.text_field :material %>
+
+        <%= f.label :packagingmethod %>
+        <%= f.text_field :packagingmethod %>
+
+        <%= f.label :city %>
+        <%= f.text_field :city %>
+
+        <%= f.label :postalcode %>
+        <%= f.text_field :postalcode %>
+
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+
+
+        <%= f.submit "Create Company Details", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

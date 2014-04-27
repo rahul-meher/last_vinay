@@ -1,0 +1,7 @@
+
+
+<%= form_tag("/search", method: "get") do %>
+    <%= label_tag(:material, "Search for:") %>
+    <%= text_field_tag(:material) %>
+    <%= submit_tag("Search") %>
+<% end %>

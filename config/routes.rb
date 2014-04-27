@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   #get 'users/new'
 
   match '/help',    to: 'static_pages#help',    via: 'get'
@@ -19,8 +20,15 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
      resources :users
+  resources :sessions, only: [:new, :create, :destroy]
   match '/signup', to: 'user#new', via: 'get'
+  match '/signin',  to: 'sessions#new',         via: 'get'
+  match '/signout', to: 'sessions#destroy',     via: 'delete'
 
+
+  resources :companies
+  match '/new', to: 'company#new', via: 'get'
+get 'companies/search'
   # Example resource route with options:
   #   resources :products do
   #     member do
